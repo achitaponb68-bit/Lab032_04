@@ -20,5 +20,18 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        User user1 = new User("A01", "achi", "032", "achi Achitapon");
+
+        TextNote textNote1 = new TextNote("Buranapong note", "Hello from text note");
+        CheckListNote checklist1 = new CheckListNote("My CheckList", "");
+        checklist1.getCheckList().add("Work 1");
+        checklist1.getCheckList().add("Work 2");
+
+        user1.addNote(textNote1);
+        user1.addNote(checklist1);
+
+        System.out.println("User Name: " + user1.getFullName());
+        System.out.println(user1.getAllNote().get(0).getSummary());
+        System.out.println(user1.getAllNote().get(1).getSummary());
     }
 }
